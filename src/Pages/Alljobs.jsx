@@ -28,8 +28,8 @@ const Alljobs = () => {
                 <AllJobBanner></AllJobBanner>
             </div>
 
-            <div className="max-w-6xl mx-auto mt-20">
-                <div className=" flex mb-16 mx-auto">
+            <div className="max-w-4xl mx-auto mt-20">
+                <div className="flex mb-16 mx-auto">
                     <input
                         type="text"
                         placeholder="Type here"
@@ -41,9 +41,9 @@ const Alljobs = () => {
                         Search
                     </button>
                 </div>
-
+                <div className="overflow-x-auto">
                 <table className="table">
-                    <thead className="text-lg font-serif font-light text-black">
+                    <thead className=" text-md md:text-lg font-serif font-light text-black">
                         <tr>
                             <th>Name</th>
                             <th>Job Title</th>
@@ -52,7 +52,7 @@ const Alljobs = () => {
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className=" text-sm">
                         {filteredData.map((job) => (
                             <tr key={job._id}>
                                 <td>
@@ -74,6 +74,7 @@ const Alljobs = () => {
                         ))}
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     );

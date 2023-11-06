@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/Authprovider";
 import Swal from "sweetalert2";
+import '../index.css'
 
 
 
@@ -10,7 +11,7 @@ const Navbar = ({ children }) => {
     const { user, signout } = useContext(AuthContext);
     console.log(user);
 
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     const handleSignOutButton = () => {
         signout()
@@ -20,7 +21,7 @@ const Navbar = ({ children }) => {
                     title: '',
                     text: 'Logged out successfully',
                     footer: '',
-                  
+
 
                 }),
                 navigate('/')
@@ -54,7 +55,7 @@ const Navbar = ({ children }) => {
                                     {/* <h1 className=" text-[#f47723] font-extrabold font-serif text-2xl">Apply4you</h1> */}
                                 </div>
                             </div>
-                            <div className="flex-none  lg:block text-lg font-serif me-32 ">
+                            <div className="flex-none  lg:block text-lg font-serif me-0 md:me-32 " id="large-device-menu">
                                 <ul className=" menu-horizontal gap-6">
                                     {/* Navbar menu content here */}
                                     <div >
@@ -132,16 +133,29 @@ const Navbar = ({ children }) => {
                             </div>
 
                             <div className="">
-                                <div className=" items-end font-serif  text-sm">
+                                <div className=" items-center md:items-end font-serif  text-sm">
 
                                     {
                                         user ?
-                                            <div className="navbar-end flex gap-2">
-                                                <img src={user.photoURL} className={`w-8 hover:${user.displayName} `} alt='' />
-                                                <button className="bg-[#f47723] text-white px-2 py-1 font-serif" onClick={handleSignOutButton}>Logout</button>
+                                            <div className="navbar-end flex">
+                                                <div className="dropdown dropdown-end">
+                                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                                        <div className="w-10 rounded-full">
+                                                            <img src={user.photoURL} />
+                                                        </div>
+                                                    </label>
+                                                    <ul tabIndex={0} className="mt-3 z-[1] shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-40 gap-2">
+                                                        <li>{user.displayName}</li>
+                                                        <li><button className="bg-[#f47723] text-white px-4 font-serif" onClick={handleSignOutButton}>Logout</button></li>
+                                                    </ul>
+
+                                                </div>
                                             </div>
                                             :
                                             <div className="navbar-end flex gap-2">
+                                                <div className="w-10 rounded-full">
+                                                    <img src='' />
+                                                </div>
                                                 <Link to='/login'><button className="bg-[#f47723] text-white px-4 py-1 font-serif">Login</button></Link>
                                             </div>
                                     }

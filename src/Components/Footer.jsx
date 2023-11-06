@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <div className=" text-white">
+        <div className=" text-white w-full">
             <footer className="footer p-10 bg-[#f47723] text-base-content">
                 <nav>
                     <header className="footer-title">Services</header>

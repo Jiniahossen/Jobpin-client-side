@@ -1,6 +1,6 @@
 const AllJobBanner = () => {
     return (
-        <div className="max-w-7xl p-10 mx-auto flex justify-around items-center">
+        <div className="max-w-7xl p-10 mx-auto md:flex justify-around items-center">
 
             <div className=" flex-1">
                 <div>

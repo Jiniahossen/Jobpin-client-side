@@ -18,7 +18,7 @@ const Details = () => {
     },[id,data])
 
     return (
-        <div>
+        <div className=" mb-20">
             {
             <Card data={findData}></Card>
             }

@@ -74,13 +74,13 @@ const Addjobs = () => {
     }
     return (
         <div>
-            <div className=" max-w-6xl mx-auto  mt-28">
+            <div className=" max-w-6xl mx-auto  my-28">
 
                 <div>
-                    <h1 className=" font-serif font-semibold text-3xl text-center mb-10">Add Your Product Here!</h1>
+                    <h1 className=" font-serif font-semibold text-3xl text-center mb-10">Add Your Job Post Here!</h1>
                 </div>
 
-                <form onSubmit={handleAddProduct} className=" w-full md:max-w-5xl md:mx-auto border  shadow-md lg:p-10 md:ps-10 ">
+                <form onSubmit={handleAddProduct} className=" w-full md:max-w-5xl md:mx-auto border  shadow-md lg:p-10 md:ps-10 p-10 ">
                     <div className=" md:flex lg:gap-20 md:gap-4 w-full mb-4">
                         <div>
                             <label className="label">

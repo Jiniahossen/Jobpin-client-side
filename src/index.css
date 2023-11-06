@@ -1,3 +1,15 @@
+@media (max-width: 1024px) {
+    #large-device-menu {
+      display: none; 
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    #large-device-menu {
+      display: block; 
+    }
+  }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
