@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/Authprovider";
 import Swal from "sweetalert2";
 
@@ -8,18 +8,22 @@ import Swal from "sweetalert2";
 const Navbar = ({ children }) => {
 
     const { user, signout } = useContext(AuthContext);
-    console.log(user)
+    console.log(user);
+
+    const navigate=useNavigate()
 
     const handleSignOutButton = () => {
         signout()
             .then(
                 Swal.fire({
                     icon: 'error',
-                    title: 'Oops...',
+                    title: '',
                     text: 'Logged out successfully',
-                    footer: '<a href="">Why do I have this issue?</a>'
+                    footer: '',
+                  
 
-                })
+                }),
+                navigate('/')
             )
             .catch(error => {
                 Swal.fire({

@@ -25,7 +25,7 @@ const Myjobs = () => {
         setMyItems(filteredData)
     }, [email, data]);
     return (
-        <div>
+        <div className=" my-32">
             <div className="max-w-5xl mx-auto">
                 {myItems && myItems.length > 0 ? (
                     <table className="table ">
