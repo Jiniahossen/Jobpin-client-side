@@ -7,7 +7,6 @@ import '../index.css'
 
 
 const Navbar = ({ children }) => {
-
     const { user, signout } = useContext(AuthContext);
     console.log(user);
 
@@ -21,8 +20,6 @@ const Navbar = ({ children }) => {
                     title: '',
                     text: 'Logged out successfully',
                     footer: '',
-
-
                 }),
                 navigate('/')
             )

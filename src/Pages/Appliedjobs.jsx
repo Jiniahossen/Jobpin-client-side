@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/Authprovider";
 import { useLoaderData } from "react-router-dom";
+import PdfGenerator from "../Components/PdfGenerator";
+// import PdfGenerator from "../Components/PdfGenerator";
 
 
 const Appliedjobs = () => {
@@ -46,7 +48,7 @@ const Appliedjobs = () => {
                         <option value="Hybrid"></option>
                         <option value="Project-Based"></option>
                     </datalist>
-                    
+
                 </div>
                 <div className="overflow-x-auto">
                     <table className="table">
@@ -55,14 +57,20 @@ const Appliedjobs = () => {
                                 <th>Category</th>
                                 <th>Job Title</th>
                                 <th>Salary-Range</th>
+                                <th></th>
                             </tr>
                         </thead>
+
                         <tbody className="text-xs md:text-sm">
                             {filteredData.map((job) => (
                                 <tr key={job._id}>
                                     <td>{job.jobcategory}</td>
                                     <td>{job.jobtitle}</td>
                                     <td>${job.salaryrange}</td>
+                                    <td>
+                                        {/* Use PdfGenerator component to generate PDFs */}
+                                        <PdfGenerator job={job} />
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
