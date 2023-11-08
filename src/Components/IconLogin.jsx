@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/Authprovider";
 
 
 const IconLogin = () => {
     const {googleSignin,githubSignIn} =useContext(AuthContext);
+    const location=useLocation()
     const navigate=useNavigate()
 
 
@@ -22,7 +23,7 @@ const IconLogin = () => {
                 showConfirmButton: false,
                 timer: 1500
               })
-            navigate('/')
+              navigate(location?.state ? location?.state :'/')
         })
         .catch(err=>{
             console.log(err)

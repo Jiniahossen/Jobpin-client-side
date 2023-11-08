@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/Authprovider";
 import Swal from "sweetalert2";
 
 const LoginForm = () => {
     const { logIn } = useContext(AuthContext);
+    const location=useLocation();
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
@@ -33,7 +34,7 @@ const LoginForm = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigate('/');
+                navigate(location?.state ? location?.state :'/');
             })
             .catch(error => {
                 console.log(error);
