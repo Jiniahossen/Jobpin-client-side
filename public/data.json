@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "categoryName":"On site"
+    },
+    {
+        "id":2,
+        "categoryName":"Part-Time"
+    },
+    {
+        "id":3,
+        "categoryName":"Hybrid"
+    },
+    {
+        "id":4,
+        "categoryName":"Remote"
+    },
+    {
+        "id":5,
+        "categoryName":"Project-Based"
+    }
+]

@@ -65,7 +65,7 @@ const Alljobs = () => {
                                     <td>${job.salaryrange}</td>
                                     <th>
                                         <Link to={`/job/${job._id}`}>
-                                            <button className="text-[10px] md:text-base font-serif font-normal px-1 py-1 rounded-sm bg-[#f47723]">
+                                            <button className="text-[10px] md:text-lg text-white font-serif font-normal px-1 py-1 rounded-sm bg-[#3748ff]">
                                                 Details
                                             </button>
                                         </Link>
