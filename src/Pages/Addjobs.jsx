@@ -49,7 +49,7 @@ const Addjobs = () => {
                     Swal.fire({
                         position:'top-center',
                         icon: 'success',
-                        title: 'Product added successfully!',
+                        title: 'Published job successfully!',
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -108,7 +108,7 @@ const Addjobs = () => {
                             </label>
                             <input type="text" list="browsers" placeholder="Job category" name="jobcategory" className="input border border-black input-sm  lg:w-96 md:w-72 w-full" />
                             <datalist id="browsers">
-                                <option value="On site"></option>
+                                <option value="On-site"></option>
                                 <option value="Remote"></option>
                                 <option value="Part-Time"></option>
                                 <option value="Hybrid"></option>

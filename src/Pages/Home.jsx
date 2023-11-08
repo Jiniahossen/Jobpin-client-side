@@ -49,7 +49,9 @@ const Home = () => {
                                 {data.map((job) => (
                                     <div key={job._id}>
                                         <div className="card card-side bg-base-100 shadow-xl">
-                                            <figure><img src={job.img} alt="Movie" className='  w-80' /></figure>
+                                        <div className=' w-80'>
+                                                    <figure><img src={job.img} alt="Movie" className=' w-80' /></figure>
+                                                    </div>
                                             <div className="card-body">
                                                 <h2 className="text-lg font-serif font-semibold">{job.jobtitle}</h2>
                                                 <h2 className=" font-serif">Category:{job.jobcategory}</h2>
@@ -71,7 +73,9 @@ const Home = () => {
                                         .map((job) => (
                                             <div key={job._id}>
                                                 <div className="card card-side bg-base-100 shadow-xl">
-                                                    <figure><img src={job.img} alt="Movie" className='  w-80' /></figure>
+                                                    <div className=' w-80'>
+                                                    <figure><img src={job.img} alt="Movie" className=' w-80' /></figure>
+                                                    </div>
                                                     <div className="card-body">
                                                         <h2 className="text-lg font-serif font-semibold">{job.jobtitle}</h2>
                                                         <h2 className=" font-serif">Category:{job.jobcategory}</h2>

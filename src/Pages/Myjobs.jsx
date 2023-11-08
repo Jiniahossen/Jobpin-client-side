@@ -52,22 +52,22 @@ const Myjobs = () => {
                     })
                     .then((data) => {
                         console.log(data);
-                        if (data.deletedcount > 0) {
+                        if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your job post has been deleted.",
                                 icon: "success"
-                            });
+                            })
+                            setMyItems((prevItems) => prevItems.filter((item) => item._id !== id));
                         }
                     })
                     .catch((error) => {
                         console.error("Error:", error);
                     });
-
             }
         });
-
     }
+    
     return (
         <div className=" my-32">
             <div className="max-w-5xl mx-auto">
