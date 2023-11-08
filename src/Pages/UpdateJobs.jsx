@@ -5,8 +5,6 @@ import { AuthContext } from "../provider/Authprovider";
 import { useLoaderData } from "react-router-dom";
 
 const UpdateJobs = () => {
-    // const [startDate, setStartDate] = useState(new Date());
-    // const [applicationDeadline, setApplicationDeadline] = useState(new Date());
  
     const data=useLoaderData();
     console.log(data)
