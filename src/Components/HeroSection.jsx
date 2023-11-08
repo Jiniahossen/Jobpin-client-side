@@ -34,7 +34,7 @@ const HeroSection = () => {
                 </div>
             </div>
             <div>
-                <img src="https://i.ibb.co/y8SF2nQ/portrait-businesswoman-pointing-finger-left-showing-corporate-banner-logo-standing-brown-suit-remove.pngs" alt="" className=" w-96 h-96" />
+                <img src="https://i.ibb.co/y8SF2nQ/portrait-businesswoman-pointing-finger-left-showing-corporate-banner-logo-standing-brown-suit-remove.pngs" alt="" className="h-96" />
             </div>
             </div>
 
