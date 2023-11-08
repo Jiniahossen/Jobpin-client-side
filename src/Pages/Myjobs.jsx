@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import { MdUpdate } from "react-icons/md"
+import Swal from "sweetalert2";
 const Myjobs = () => {
 
     const [myItems, setMyItems] = useState();
@@ -26,6 +27,47 @@ const Myjobs = () => {
         const filteredData = data.filter(data => data.email === email);
         setMyItems(filteredData)
     }, [email, data]);
+
+
+    //delete operation
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/jobs/${id}`, {
+                    method: "DELETE"
+                })
+                    .then((res) => {
+                        if (!res.ok) {
+                            throw new Error("Failed to delete job");
+                        }
+                        return res.json();
+                    })
+                    .then((data) => {
+                        console.log(data);
+                        if (data.deletedcount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your job post has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                    });
+
+            }
+        });
+
+    }
     return (
         <div className=" my-32">
             <div className="max-w-5xl mx-auto">
@@ -58,9 +100,9 @@ const Myjobs = () => {
                                             <Link to={`/update/${job._id}`}>
                                                 <button className=" font-serif font-normal px-1 md:me-4 py-1 rounded-sm  text-green-700 text-lg lg:text-2xl"><MdUpdate></MdUpdate></button>
                                             </Link>
-                                            <Link>
-                                                <button className=" font-serif  px-1 font-extrabold py-1 rounded-sm text-red-600 text-lg lg:text-2xl"><AiOutlineDelete></AiOutlineDelete></button>
-                                            </Link>
+
+                                            <button onClick={() => handleDelete(job._id)} className=" font-serif  px-1 font-extrabold py-1 rounded-sm text-red-600 text-lg lg:text-2xl"><AiOutlineDelete></AiOutlineDelete></button>
+
                                         </th>
                                     </tr>
                                 </tr>

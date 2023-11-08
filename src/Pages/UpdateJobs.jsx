@@ -2,32 +2,37 @@ import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../provider/Authprovider";
+import { useLoaderData } from "react-router-dom";
 
 const UpdateJobs = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [applicationDeadline, setApplicationDeadline] = useState(new Date());
+ 
+    const data=useLoaderData();
+    console.log(data)
 
+    const{username,jobtitle,img,jobcategory,salaryrange,applicantsNumber,postingDate}=data ||{}
 
     const { user } = useContext(AuthContext);
     const email = user.email;
-    const username = user.displayName;
+    const userName = user.displayName;
     
-    const handleUpdateProduct = (e) => {
-        e.preventDefault();
-        const form = e.target;
+    // const handleUpdateProduct = (e) => {
+    //     e.preventDefault();
+    //     const form = e.target;
 
-        const updatedData = {
-            jobtitle: form.jobtitle.value || "not given",
-            jobcategory: form.jobcategory.value || "not given",
-            salaryrange: form.salaryrange.value || "not given",
-            img: form.img.value || "not given",
-            postingDate:startDate,
-            applicationDeadline:applicationDeadline,
-            applicantsNumber: form.applicantsNumber.value,
-            email, username ,
+    //     const updatedData = {
+    //         jobtitle: form.jobtitle.value || "not given",
+    //         jobcategory: form.jobcategory.value || "not given",
+    //         salaryrange: form.salaryrange.value || "not given",
+    //         img: form.img.value || "not given",
+    //         postingDate:startDate,
+    //         applicationDeadline:applicationDeadline,
+    //         applicantsNumber: form.applicantsNumber.value,
+    //         email, username ,
 
-        }
-    }
+    //     }
+    // }
 
     return (
         <div>
@@ -38,19 +43,19 @@ const UpdateJobs = () => {
                         <h1 className=" font-serif font-semibold text-3xl text-center mb-10">Add Your Product Here!</h1>
                     </div>
 
-                    <form onSubmit={handleUpdateProduct} className=" w-full md:max-w-5xl md:mx-auto border  shadow-md lg:p-10 md:ps-10 ">
+                    <form className=" w-full md:max-w-5xl md:mx-auto border  shadow-md lg:p-10 md:ps-10 ">
                         <div className=" md:flex lg:gap-20 md:gap-4 w-full mb-4">
                             <div>
                                 <label className="label">
                                     <span className=" font-serif ">Job Cover Image</span>
                                 </label>
-                                <input type="text" placeholder="URL" name="img" className="input border border-black input-sm lg:w-96 md:w-72 w-full" />
+                                <input type="text" defaultValue={img} name="img" className="input border border-black input-sm lg:w-96 md:w-72 w-full" />
                             </div>
                             <div>
                                 <label className="label">
-                                    <span className=" font-serif">User NAme</span>
+                                    <span className=" font-serif">User Name</span>
                                 </label>
-                                <input type="text" defaultValue={username} name="usernames" className="input border border-black input-sm  lg:w-96 md:w-72 w-full" />
+                                <input type="text" defaultValue={userName} name="usernames" className="input border border-black input-sm  lg:w-96 md:w-72 w-full" />
                             </div>
                         </div>
                         <div className=" md:flex lg:gap-20 md:gap-4 w-full mb-4">
@@ -58,7 +63,7 @@ const UpdateJobs = () => {
                                 <label className="label">
                                     <span className=" font-serif ">Job Title</span>
                                 </label>
-                                <input type="text" placeholder="Job Title" name="jobtitle" className="input border border-black input-sm lg:w-96 md:w-72 w-full" />
+                                <input type="text" defaultValue={jobtitle} name="jobtitle" className="input border border-black input-sm lg:w-96 md:w-72 w-full" />
                             </div>
                             <div>
                                 <label className="label">
