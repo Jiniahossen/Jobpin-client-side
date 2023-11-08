@@ -23,12 +23,12 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home></Home>,
-                loader:()=>fetch('http://localhost:5000/jobs')
+                loader:()=>fetch('https://apply4you-server.vercel.app/jobs')
             },
             {
                 path: '/all-jobs',
                 element: <Alljobs></Alljobs>,
-                loader:()=>fetch('http://localhost:5000/jobs')
+                loader:()=>fetch('https://apply4you-server.vercel.app/jobs')
             },
             {
                 path: '/blogs',
@@ -41,22 +41,22 @@ const router = createBrowserRouter([
             {
                 path: '/my-jobs',
                 element: <PrivateRoute><Myjobs></Myjobs></PrivateRoute>,
-                loader:()=>fetch('http://localhost:5000/jobs')
+                loader:()=>fetch('https://apply4you-server.vercel.app/jobs')
             },
             {
                 path: '/applied-jobs',
                 element: <PrivateRoute><Appliedjobs></Appliedjobs></PrivateRoute>,
-                loader:()=>fetch('http://localhost:5000/applied-jobs')
+                loader:()=>fetch('https://apply4you-server.vercel.app/applied-jobs')
             },
             {
                 path:'/job/:id',
                 element:<PrivateRoute><Details></Details></PrivateRoute>,
-                loader:()=>fetch('http://localhost:5000/jobs')
+                loader:()=>fetch('https://apply4you-server.vercel.app/jobs')
             },
             {
                 path:'/update/:id',
                 element:<PrivateRoute><UpdateJobs></UpdateJobs></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+                loader:({params})=>fetch(`https://apply4you-server.vercel.app/jobs${params.id}`)
             },
             {
                 path: '/login',

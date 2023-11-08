@@ -34,7 +34,7 @@ const Addjobs = () => {
 
         console.log(addedData);
 
-        fetch('http://localhost:5000/jobs', {
+        fetch('https://apply4you-server.vercel.app/jobs', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -84,13 +84,13 @@ const Addjobs = () => {
                             <label className="label">
                                 <span className=" font-serif ">Job Cover Image</span>
                             </label>
-                            <input type="text" placeholder="URL" name="img" className="input border border-black input-sm lg:w-96 md:w-72 w-full" />
+                            <input type="text" placeholder="URL" name="img" className="input border border-black input-sm lg:w-96 md:w-72 w-full" required />
                         </div>
                         <div>
                             <label className="label">
                                 <span className=" font-serif">User NAme</span>
                             </label>
-                            <input type="text" defaultValue={username} name="usernames" className="input border border-black input-sm  lg:w-96 md:w-72 w-full" />
+                            <input type="text" defaultValue={username} name="usernames" className="input border border-black input-sm  lg:w-96 md:w-72 w-full" required />
                         </div>
                     </div>
                     <div className=" md:flex lg:gap-20 md:gap-4 w-full mb-4">
@@ -98,13 +98,13 @@ const Addjobs = () => {
                             <label className="label">
                                 <span className=" font-serif ">Job Title</span>
                             </label>
-                            <input type="text" placeholder="Job Title" name="jobtitle" className="input border border-black input-sm lg:w-96 md:w-72 w-full" />
+                            <input type="text" placeholder="Job Title" name="jobtitle" className="input border border-black input-sm lg:w-96 md:w-72 w-full" required />
                         </div>
                         <div>
                             <label className="label">
                                 <span className=" font-serif">Job Category</span>
                             </label>
-                            <input type="text" list="browsers" placeholder="Job category" name="jobcategory" className="input border border-black input-sm  lg:w-96 md:w-72 w-full" />
+                            <input type="text" list="browsers" placeholder="Job category" name="jobcategory" className="input border border-black input-sm  lg:w-96 md:w-72 w-full" required />
                             <datalist id="browsers">
                                 <option value="On-site"></option>
                                 <option value="Remote"></option>
@@ -119,7 +119,7 @@ const Addjobs = () => {
                             <label className="label">
                                 <span className=" font-serif ">Salary Range</span>
                             </label>
-                            <input type="text" placeholder="type" name="salaryrange" className="input border border-black input-sm lg:w-96 md:w-72 w-full" />
+                            <input type="text" placeholder="type" name="salaryrange" className="input border border-black input-sm lg:w-96 md:w-72 w-full" required />
                         </div>
                         <div>
                             <label className="label col-form-label" onClick={Date}>
@@ -127,6 +127,7 @@ const Addjobs = () => {
                             </label>
                             <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}
                                 dateFormat="dd/MM/yyyy"
+                                required
                             />
                         </div>
                     </div>
@@ -136,7 +137,7 @@ const Addjobs = () => {
                                 <label className="label">
                                     <span className=" font-serif ">Job Applicants No</span>
                                 </label>
-                                <input type="text" defaultValue={0} name="applicantsNumber" className="input border border-black input-sm lg:w-96 md:w-72 w-full" />
+                                <input type="text" defaultValue={0} name="applicantsNumber" className="input border border-black input-sm lg:w-96 md:w-72 w-full" required />
                             </div>
                             <div>
                                 <label className="label">
@@ -154,7 +155,7 @@ const Addjobs = () => {
                                 <label className="label">
                                     <span className=" font-serif ">Job Requirments</span>
                                 </label>
-                                <input type="text" placeholder="Requirments" name="jobrequirments" className="input border border-black input-sm  w-full" />
+                                <input type="text" placeholder="Requirments" name="jobrequirments" className="input border border-black input-sm  w-full" required />
                             </div>
                         </div>
                     </div>

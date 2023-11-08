@@ -52,7 +52,7 @@ const Card = ({ data }) => {
             resumeLink: form.resumeLink.value
         }
 
-        fetch('http://localhost:5000/applied-jobs', {
+        fetch('https://apply4you-server.vercel.app/applied-jobs', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

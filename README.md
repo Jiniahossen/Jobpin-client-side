@@ -7,3 +7,6 @@
 .Applied job pages will show the data the user have applied for job .this will show specific user data ,which I have get using email from database
 
 .My job route will show the job details ,if user post job circullar this route will show all the job post in a tabular form
+
+
+live link:https://inexpensive-meeting.surge.sh
