@@ -53,17 +53,17 @@ const router = createBrowserRouter([
             {
                 path:'/update/:id',
                 element:<UpdateJobs></UpdateJobs>
-            }
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            },
         ]
-    },
-    {
-        path: '/login',
-        element: <Login></Login>
-    },
-    {
-        path: '/register',
-        element: <Register></Register>
-    },
+    }
 
 ]);
 

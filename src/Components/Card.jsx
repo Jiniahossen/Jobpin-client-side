@@ -1,12 +1,9 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../provider/Authprovider";
-import axios from "axios";
 import Swal from "sweetalert2";
 
-
 const Card = ({ data }) => {
-    const [currentTimestamp, setCurrentTimestamp] = useState(Date.now());
     const [deadlinePassed, setDeadlinePassed] = useState(false);
 
     const { user } = useContext(AuthContext);
@@ -14,6 +11,42 @@ const Card = ({ data }) => {
     const userName = user.displayName;
 
     const { applicationDeadline, email, img, jobcategory, jobrequirments, _id, jobtitle, salaryrange, username, applicantsNumber } = data || {};
+
+
+    const formatDate = (dateString) => {
+        const dateObj = new Date(dateString);
+        const day = dateObj.getDate();
+        const month = dateObj.getMonth() + 1;
+        const year = dateObj.getFullYear();
+        return `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
+    };
+
+
+    const handleApplicationButton = (e) => {
+        e.preventDefault();
+        const applyDate = (new Date(applicationDeadline));
+        const date = Date.now();
+        const applicationDeadlinetime = formatDate(applyDate);
+        const NowDate = formatDate(date);
+        
+        const Time1= new Date(NowDate).getTime();
+        const Time2=new Date(applicationDeadlinetime).getTime()
+        
+
+        if (Time1 > Time2) {
+            setDeadlinePassed(true);
+            return;
+        } else if (userEmail === email) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "You can't apply for your own job",
+                footer: '<a href="">Why do I have this issue?</a>'
+            });
+        } else {
+            document.getElementById('my_modal_5').showModal();
+        }
+    };
 
 
     const handleApplyButton = (e) => {
@@ -38,26 +71,20 @@ const Card = ({ data }) => {
                     Swal.fire({
                         position: 'top-center',
                         icon: 'success',
-                        title: 'Product added successfully!',
+                        title: 'Applied successfully!',
                         showConfirmButton: false,
                         timer: 1500
-                    })
+                    });
+
+                    // Close the modal after successful submission
+                    document.getElementById('my_modal_5').close();
                 }
-                console.log(data)
             })
     }
 
-    const formatDate = (dateString) => {
-        const dateObj = new Date(dateString);
-        const day = dateObj.getDate();
-        const month = dateObj.getMonth() + 1;
-        const year = dateObj.getFullYear();
-        return `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
-    };
 
     return (
         <div className="gap-6 flex-none md:flex max-w-6xl mx-auto mt-20">
-
             <div className="border border-black flex-1 ">
                 <img src={img} alt="" className=" h-full" />
             </div>
@@ -70,7 +97,13 @@ const Card = ({ data }) => {
                 <h1 className="text-base font-serif font-semibold mb-4">Number of Applicants:{applicantsNumber}</h1>
                 <div>
                     {deadlinePassed ? (
-                        <span>The deadline is over. Applications are closed.</span>
+                        <span>
+                            {Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: "Deadline is over",
+                            footer: '<a href="">Why do I have this issue?</a>'
+                        })}</span>
                     ) : (
                         <div>
                             <button className="text-lg text-white font-serif bg-[#f47723] px-4 py-1" onClick={() => document.getElementById('my_modal_5').showModal()}>Apply</button>
@@ -105,16 +138,8 @@ const Card = ({ data }) => {
                     )}
                 </div>
             </div>
-
         </div>
     );
 };
 
 export default Card;
-
-
-{/* <Link to={`/details/${_id}`}>
-<button type="button" className="text-lg text-white font-serif bg-[#f47723] px-4">
-    Apply
-</button>
-</Link> */}

@@ -37,43 +37,44 @@ const Alljobs = () => {
                         value={searchTerm}
                         onChange={handleSearchInputChange}
                     />
-                    <button className="btn btn-outline btn-warning" onClick={() => {}}>
+                    <button className="btn btn-outline btn-warning" onClick={() => { }}>
                         Search
                     </button>
                 </div>
                 <div className="overflow-x-auto">
-                <table className="table">
-                    <thead className=" text-md md:text-lg font-serif font-light text-black">
-                        <tr>
-                            <th>Name</th>
-                            <th>Job Title</th>
-                            <th>Application Deadline</th>
-                            <th>Salary Range</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody className=" text-sm">
-                        {filteredData.map((job) => (
-                            <tr key={job._id}>
-                                <td>
-                                    <div className="flex items-center space-x-3">
-                                        <div>
+                    <table className="table">
+                        <thead className="text-[10px] md:text-lg font-serif font-light text-black">
+                            <tr>
+                                <th>Name</th>
+                                <th>Job Title</th>
+                                <th>Deadline</th>
+                                <th>Salary-Range</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody className="text-xs md:text-sm">
+                            {filteredData.map((job) => (
+                                <tr key={job._id}>
+                                    <td>
+                                        <div className="flex flex-col md:flex-row items-center md:space-x-3">
                                             <div className="font-bold">{job.username}</div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>{job.jobtitle}<br /></td>
-                                <td>{formatDate(job.applicationDeadline)}</td>
-                                <td>${job.salaryrange}</td>
-                                <th>
-                                    <Link to={`/job/${job._id}`}>
-                                        <button className="text-base font-serif font-normal px-2 py-1 rounded-sm bg-[#f47723]">Details</button>
-                                    </Link>
-                                </th>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                                    </td>
+                                    <td>{job.jobtitle}</td>
+                                    <td>{formatDate(job.applicationDeadline)}</td>
+                                    <td>${job.salaryrange}</td>
+                                    <th>
+                                        <Link to={`/job/${job._id}`}>
+                                            <button className="text-[10px] md:text-base font-serif font-normal px-1 py-1 rounded-sm bg-[#f47723]">
+                                                Details
+                                            </button>
+                                        </Link>
+                                    </th>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </div>
