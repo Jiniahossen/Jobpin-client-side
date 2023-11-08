@@ -164,7 +164,7 @@ const Addjobs = () => {
 
                     </div>
                     <div className=" pt-6 text-center font-serif">
-                        <button className="w-full  bg-[#f47723] text-white py-2 rounded-md">Publish Job</button>
+                        <button className="w-full  bg-[#3748ff] text-white py-2 rounded-md">Publish Job</button>
                     </div>
 
                 </form>

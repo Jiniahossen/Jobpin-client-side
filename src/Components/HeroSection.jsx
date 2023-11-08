@@ -1,6 +1,6 @@
 const HeroSection = () => {
     return (
-        <div className="bg-[#f4ebf6] mb-20 ">
+        <div className="bg-[#f4ebf6] mb-20 pt-6 ">
             <div className=" items-center flex flex-col lg:flex-row justify-between max-w-6xl mx-auto">
             <div className="">
                 <h1 className=" text-4xl lg:text-6xl font-serif font-semibold">Millions of jobs <br /> for you <br />

@@ -5,7 +5,7 @@ const AllJobBanner = () => {
             <div className=" flex-1">
                 <div>
                     <h1 className=" text-3xl md:text-7xl text-black font-serif font-semibold">Find Your <br />
-                        <span className=" text-3xl md:text-7xl text-[#f47723] font-serif font-semibold "> Dream Job</span>
+                        <span className=" text-3xl md:text-7xl text-[#3748ff] font-serif font-semibold "> Dream Job</span>
                     </h1>
                     <p className="text-base text-black font-serif font-light mt-4">Thousands of jobs here.Find your new Job Today!<br />
                         Posting new jobs everyday.

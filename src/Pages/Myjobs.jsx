@@ -56,10 +56,10 @@ const Myjobs = () => {
                                     <tr>
                                         <th>
                                             <Link to={`/update/${job._id}`}>
-                                                <button className="text-base font-serif font-normal px-2 md:me-4 py-1 rounded-sm bg-green-600 text-white"><MdUpdate></MdUpdate></button>
+                                                <button className=" font-serif font-normal px-1 md:me-4 py-1 rounded-sm  text-green-700 text-lg"><MdUpdate></MdUpdate></button>
                                             </Link>
                                             <Link>
-                                                <button className="text-base font-serif  px-2 font-extrabold py-1 rounded-sm bg-red-600 text-white"><AiOutlineDelete></AiOutlineDelete></button>
+                                                <button className="text-lg font-serif  px-1 font-extrabold py-1 rounded-sm text-red-600"><AiOutlineDelete></AiOutlineDelete></button>
                                             </Link>
                                         </th>
                                     </tr>

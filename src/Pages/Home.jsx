@@ -1,3 +1,4 @@
+import Comapnies from "../Components/Comapnies";
 import HeroSection from "../Components/HeroSection";
 
 
@@ -6,6 +7,9 @@ const Home = () => {
         <div className="">
            <div>
             <HeroSection></HeroSection>
+           </div>
+           <div>
+            <Comapnies></Comapnies>
            </div>
         </div>
     );
