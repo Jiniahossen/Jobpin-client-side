@@ -33,11 +33,11 @@ const Alljobs = () => {
                     <input
                         type="text"
                         placeholder="Type here"
-                        className="input input-bordered input-primary w-full max-w-4xl"
+                        className=" border border-[#3748ff] w-full max-w-lg"
                         value={searchTerm}
                         onChange={handleSearchInputChange}
                     />
-                    <button className="btn btn-outline btn-warning" onClick={() => { }}>
+                    <button className="text-sm bg-[#3748ff] text-white font-serif px-1 rounded-sm py-1" onClick={() => { }}>
                         Search
                     </button>
                 </div>
