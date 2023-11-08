@@ -54,7 +54,7 @@ const Card = ({ data }) => {
         const form = e.target;
 
         const applieddata = {
-            userEmail, userName,
+            userEmail, userName,jobtitle,salaryrange,img,jobcategory,
             resumeLink: form.resumeLink.value
         }
 
