@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/Authprovider";
+import {FcGoogle} from "react-icons/fc"
 
 
 const IconLogin = () => {
-    const {googleSignin,githubSignIn} =useContext(AuthContext);
+    const {googleSignin} =useContext(AuthContext);
     const location=useLocation()
     const navigate=useNavigate()
 
@@ -33,10 +34,7 @@ const IconLogin = () => {
         <div>
 
             <div >
-                <button className="mt-4 font-serif px-4 py-1 text-lg border border-[#b50b82] text-[#b50b82]" onClick={()=>handleGoogleSignin(googleSignin)}>Login with Google</button>
-            </div>
-            <div >
-                <button className="mt-2 font-serif px-4 py-1 text-lg border border-[#b50b82] text-[#b50b82]" onClick={()=>handleGoogleSignin(githubSignIn)}>Login with Github</button>
+                <button className="mt-4 font-serif px-4 py-1 text-4xl " onClick={()=>handleGoogleSignin(googleSignin)}><FcGoogle></FcGoogle></button>
             </div>
             
         </div>

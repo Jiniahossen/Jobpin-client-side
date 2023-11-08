@@ -67,10 +67,10 @@ const LoginForm = () => {
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             </div>
                             <div className="text-base font-serif">
-                                <h2>Do not have any account? <span className="text-[#b50b82]"> <Link to={'/register'}>Register</Link></span></h2>
+                                <h2>Do not have any account? <span className="text-[#3748ff]"> <Link to={'/register'}>Register</Link></span></h2>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="bg-[#b50b82] btn text-white hover:bg-[#b50b82] hover:text-white">Login</button>
+                                <button className="bg-[#3748ff] btn text-white hover:bg-[#3748ff] hover:text-white">Login</button>
                             </div>
                         </form>
                     </div>

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import {AiOutlineSearch}  from 'react-icons/ai';
 import { Link, useLoaderData } from "react-router-dom";
 import AllJobBanner from "../Components/AllJobBanner";
+import { useState } from 'react';
 
 const Alljobs = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -29,16 +30,16 @@ const Alljobs = () => {
             </div>
 
             <div className="max-w-4xl mx-auto mt-20">
-                <div className="flex mb-16 mx-auto">
+                <div className="flex-wrap lg:flex mb-16 mx-auto w-full">
                     <input
                         type="text"
                         placeholder="Type here"
-                        className=" border border-[#3748ff] w-full max-w-lg"
+                        className=" border border-[#3748ff] w-80 lg:w-96 p-0 lg:p-1 rounded-sm"
                         value={searchTerm}
                         onChange={handleSearchInputChange}
                     />
-                    <button className="text-sm bg-[#3748ff] text-white font-serif px-1 rounded-sm py-1" onClick={() => { }}>
-                        Search
+                    <button className="text-sm bg-[#3748ff] text-white font-serif px-2 rounded-sm py-2" onClick={() => { }}>
+                       <AiOutlineSearch></AiOutlineSearch>
                     </button>
                 </div>
                 <div className="overflow-x-auto">
@@ -66,7 +67,7 @@ const Alljobs = () => {
                                     <th>
                                         <Link to={`/job/${job._id}`}>
                                             <button className="text-[10px] md:text-lg text-white font-serif font-normal px-1 py-1 rounded-sm bg-[#3748ff]">
-                                                Details
+                                                view
                                             </button>
                                         </Link>
                                     </th>

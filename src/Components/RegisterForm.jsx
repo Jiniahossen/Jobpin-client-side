@@ -78,10 +78,10 @@ const RegisterForm = () => {
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             </div>
                             <div className="text-base font-serif">
-                                <h2>Already have an account? <span className=" text-[##3748ff]"> <Link to={'/login'}>Login</Link></span></h2>
+                                <h2>Already have an account? <span className=" text-[#3748ff]"> <Link to={'/login'}>Login</Link></span></h2>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="bg-[#b50b82] btn text-white hover:bg-[#3748ff] hover:text-white">Register</button>
+                                <button className="bg-[#3748ff] btn text-white hover:bg-[#3748ff] hover:text-white">Register</button>
                             </div>
                         </form>
                     </div>

@@ -8,10 +8,16 @@ import ClientSection from '../Components/ClientSection';
 
 const Home = () => {
     const data = useLoaderData();
-
     const jobCategories = Array.from(new Set(data.map((job) => job.jobcategory)))
-
     const [selectedTab, setSelectedTab] = React.useState("All");
+
+    const formatDate = (dateString) => {
+        const dateObj = new Date(dateString);
+        const day = dateObj.getDate();
+        const month = dateObj.getMonth() + 1;
+        const year = dateObj.getFullYear();
+        return `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
+    };
 
     return (
         <div className="">
@@ -49,18 +55,23 @@ const Home = () => {
                             <div className='  grid grid-cols-1 lg:grid-cols-2 gap-6 my-10'>
                                 {data.map((job) => (
                                     <div key={job._id}>
-                                        <div className="card card-side bg-base-100 shadow-xl">
-                                        <div className=' w-60'>
-                                                    <figure><img src={job.img} alt="Movie" className=' w-60' /></figure>
-                                                    </div>
-                                            <div className="card-body">
-                                                <h2 className="text-lg font-serif font-semibold">{job.jobtitle}</h2>
-                                                <h2 className=" font-serif">Category:{job.jobcategory}</h2>
-                                                <p className=' font-serif'>Salary range:{job.salaryrange}</p>
-                                                <div className="card-actions">
-                                                    <Link to={`/job/${job._id}`}><button className="px-2 py-1 bg-[#3748ff] rounded-sm text-base font-serif text-white">View Now</button></Link>
-                                                </div>
+                                        <div className="card card-side bg-base-100 shadow-xl h-full">
+                                            <div className='w-60 h-full'>
+                                                <figure><img src={job.img} alt="Movie" className=' w-60 h-full' /></figure>
                                             </div>
+                                            <div className="ms-6">
+                                                        <h2 className="text-lg font-serif font-semibold mb-2">{job.jobtitle}</h2>
+                                                        <h2 className=" font-serif font-semibold mb-1">Posted by:{job.username}</h2>
+                                                        <h2 className=" font-serif mb-1">Category:{job.jobcategory}</h2>
+                                                        <p className=' font-serif mb-1'>Salary range:{job.salaryrange}</p>
+                                                        <p className=' font-serif mb-1'>Posting Date:
+                                                            {formatDate(job.postingDate)}</p>
+                                                        <p className=' font-serif mb-1'>Application Deadline:{formatDate(job.applicationDeadline)}</p>
+                                                        <p className=' font-serif mb-6'>Applicants no: {job.applicantsNumber}</p>
+                                                        <div className="card-actions">
+                                                            <Link to={`/job/${job._id}`}><button className="px-2 py-1 bg-[#3748ff] rounded-sm text-base font-serif text-white">View Details</button></Link>
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
                                 ))}
@@ -75,14 +86,19 @@ const Home = () => {
                                             <div key={job._id}>
                                                 <div className="card card-side bg-base-100 shadow-xl">
                                                     <div className=' w-60'>
-                                                    <figure><img src={job.img} alt="Movie" className=' w-60' /></figure>
+                                                        <figure><img src={job.img} alt="Movie" className=' w-60' /></figure>
                                                     </div>
-                                                    <div className="card-body">
-                                                        <h2 className="text-lg font-serif font-semibold">{job.jobtitle}</h2>
-                                                        <h2 className=" font-serif">Category:{job.jobcategory}</h2>
-                                                        <p className=' font-serif'>Salary range:{job.salaryrange}</p>
+                                                    <div className="ms-6">
+                                                        <h2 className="text-lg font-serif font-semibold mb-2">{job.jobtitle}</h2>
+                                                        <h2 className=" font-serif font-semibold mb-1">Posted by:{job.username}</h2>
+                                                        <h2 className=" font-serif mb-1">Category:{job.jobcategory}</h2>
+                                                        <p className=' font-serif mb-1'>Salary range:{job.salaryrange}</p>
+                                                        <p className=' font-serif mb-1'>Posting Date:
+                                                            {formatDate(job.postingDate)}</p>
+                                                        <p className=' font-serif mb-1'>Application Deadline:{formatDate(job.applicationDeadline)}</p>
+                                                        <p className=' font-serif mb-6'>Applicants no: {job.applicantsNumber}</p>
                                                         <div className="card-actions">
-                                                            <Link to={`/job/${job._id}`}><button className="px-2 py-1 bg-[#3748ff] rounded-sm text-base font-serif text-white">View Now</button></Link>
+                                                            <Link to={`/job/${job._id}`}><button className="px-2 py-1 bg-[#3748ff] rounded-sm text-base font-serif text-white">View Details</button></Link>
                                                         </div>
                                                     </div>
                                                 </div>

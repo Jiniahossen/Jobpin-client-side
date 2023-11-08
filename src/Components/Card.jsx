@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 const Card = ({ data }) => {
     const [deadlinePassed, setDeadlinePassed] = useState(false);
+    
 
     const { user } = useContext(AuthContext);
     const userEmail = user.email;

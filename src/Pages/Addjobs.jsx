@@ -1,9 +1,7 @@
-
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/Authprovider";
-// import axios from "axios";
 import Swal from "sweetalert2";
 
 
