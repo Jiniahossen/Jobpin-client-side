@@ -50,8 +50,8 @@ const Navbar = ({ children }) => {
                                 </label>
                             </div>
                             <div className="flex-1 px-2 mx-2 ">
-                                <div className="flex h-20 w-20">
-                                    <img src="https://i.ibb.co/gVDtLNS/logo.png" className=" w-20" alt="" />
+                                <div className="flex w-28">
+                                    <img src="https://i.ibb.co/8sM7Lb4/Screenshot-2023-11-08-113221-removebg-preview.png" className=" w-28" alt="" />
                                     {/* <h1 className=" text-[#f47723] font-extrabold font-serif text-2xl">Apply4you</h1> */}
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ const Navbar = ({ children }) => {
                                         <NavLink
                                             to="/"
                                             className={({ isActive, isPending }) =>
-                                                isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                                isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                             }
                                         >
                                             Home
@@ -72,7 +72,7 @@ const Navbar = ({ children }) => {
                                         <NavLink
                                             to="/all-jobs"
                                             className={({ isActive, isPending }) =>
-                                                isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                                isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                             }
                                         >
                                             All Jobs
@@ -84,7 +84,7 @@ const Navbar = ({ children }) => {
                                             <NavLink
                                                 to="/applied-jobs"
                                                 className={({ isActive, isPending }) =>
-                                                    isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                                    isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                                 }
                                             >
                                                 Applied Jobs
@@ -97,7 +97,7 @@ const Navbar = ({ children }) => {
                                             <NavLink
                                                 to="/add-jobs"
                                                 className={({ isActive, isPending }) =>
-                                                    isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                                    isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                                 }
                                             >
                                                 Add  a Job
@@ -110,7 +110,7 @@ const Navbar = ({ children }) => {
                                                 <NavLink
                                                     to="/my-jobs"
                                                     className={({ isActive, isPending }) =>
-                                                        isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                                        isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                                     }
                                                 >
                                                     My Jobs
@@ -122,7 +122,7 @@ const Navbar = ({ children }) => {
                                         <NavLink
                                             to="/blogs"
                                             className={({ isActive, isPending }) =>
-                                                isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                                isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                             }
                                         >
                                             Blogs
@@ -146,7 +146,7 @@ const Navbar = ({ children }) => {
                                                     </label>
                                                     <ul tabIndex={0} className="mt-3 z-[1] shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-40 gap-2">
                                                         <li>{user.displayName}</li>
-                                                        <li><button className="bg-[#f47723] text-white px-4 font-serif" onClick={handleSignOutButton}>Logout</button></li>
+                                                        <li><button className="bg-[#3748ff] text-white px-4 font-serif" onClick={handleSignOutButton}>Logout</button></li>
                                                     </ul>
 
                                                 </div>
@@ -156,7 +156,7 @@ const Navbar = ({ children }) => {
                                                 <div className="w-10 rounded-full">
                                                     <img src='' />
                                                 </div>
-                                                <Link to='/login'><button className="bg-[#f47723] text-white px-4 py-1 font-serif">Login</button></Link>
+                                                <Link to='/login'><button className="bg-[#3748ff] text-white px-4 py-1 font-serif">Login</button></Link>
                                             </div>
                                     }
                                 </div>
@@ -174,7 +174,7 @@ const Navbar = ({ children }) => {
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                    isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                 }
                             >
                                 Home
@@ -184,7 +184,7 @@ const Navbar = ({ children }) => {
                             <NavLink
                                 to="/all-jobs"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "px-2 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-2 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                    isPending ? "px-2 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-2 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                 }
                             >
                                 All Jobs
@@ -197,7 +197,7 @@ const Navbar = ({ children }) => {
                                 <NavLink
                                     to="/applied-jobs"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                        isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                     }
                                 >
                                     Applied Jobs
@@ -210,7 +210,7 @@ const Navbar = ({ children }) => {
                                 <NavLink
                                     to="/add-jobs"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                        isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                     }
                                 >
                                     Add  a Job
@@ -223,7 +223,7 @@ const Navbar = ({ children }) => {
                                     <NavLink
                                         to="/my-jobs"
                                         className={({ isActive, isPending }) =>
-                                            isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                            isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                         }
                                     >
                                         My Jobs
@@ -235,7 +235,7 @@ const Navbar = ({ children }) => {
                             <NavLink
                                 to="/blogs"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#f47723] text-lg font-serif text-white" : ""
+                                    isPending ? "px-4 py-1 bg-none text-lg font-serif text-black" : isActive ? "px-4 py-1 bg-[#3748ff] text-lg font-serif text-white" : ""
                                 }
                             >
                                 Blogs

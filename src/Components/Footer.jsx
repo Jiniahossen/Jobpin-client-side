@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <div className=" text-white w-full">
-            <footer className="footer p-10 bg-[#f47723] text-base-content">
+            <footer className="footer p-10 bg-[#3748ff] text-white font-serif ">
                 <nav>
                     <header className="footer-title">Services</header>
                     <a className="link link-hover">Branding</a>
@@ -25,8 +25,7 @@ const Footer = () => {
             </footer>
             <footer className="footer px-10 py-4 border-t bg-white text-base-content border-base-300 shadow-md">
                 <aside className="items-center grid-flow-col">
-                    <img src="https://i.ibb.co/gVDtLNS/logo.png" className=" w-20" alt="" />
-                    <p className="text-lg font-serif font-semibold text-[#f47723]">Apply4you</p>
+                    <img src="https://i.ibb.co/8sM7Lb4/Screenshot-2023-11-08-113221-removebg-preview.png" className=" w-20" alt="" />
                 </aside>
                 <nav className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4">

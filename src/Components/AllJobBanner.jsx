@@ -12,7 +12,7 @@ const AllJobBanner = () => {
                     </p>
                 </div>
                 <div className=" ms-14  ps-10 pt-6 pb-4 pe-10 mt-6 shadow-xl w-60 rounded-lg">
-                    <h1 className=" font-serif mb-2 ms-2">10k+ Job post</h1>
+                    <h1 className=" font-serif mb-2 ms-2">10k+ Particients</h1>
                     <div className="avatar-group -space-x-6">
                         <div className="avatar">
                             <div className="w-12">
