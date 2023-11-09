@@ -98,7 +98,7 @@ const Card = ({ data }) => {
                         </span>
                     ) : (
                         <div>
-                            <button className="text-lg text-white font-serif bg-[#f47723] px-4 py-1" onClick={handleApplicationButton}>Apply</button>
+                            <button className="text-lg text-white font-serif bg-[#3748ff] px-4 py-1" onClick={handleApplicationButton}>Apply</button>
                             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                                 <div className="modal-box">
                                     <div className="modal-action justify-center">
@@ -121,7 +121,7 @@ const Card = ({ data }) => {
                                                 </label>
                                                 <input type="text" placeholder="link" name="resumeLink" className="input border border-black input-sm lg:w-96 md:w-72 w-full" />
                                             </div>
-                                            <button className="text-lg text-white font-serif bg-[#f47723] px-4 py-1 mt-6">Submit</button>
+                                            <button className="text-lg text-white font-serif bg-[#3748ff] px-4 py-1 mt-6">Submit</button>
                                         </form>
                                     </div>
                                 </div>
