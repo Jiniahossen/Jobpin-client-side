@@ -1,7 +1,7 @@
 const HeroSection = () => {
     return (
         <div className="bg-[#f4ebf6] mb-20 pt-6 ">
-            <div className=" items-center flex flex-col lg:flex-row justify-between max-w-6xl mx-auto">
+            <div className=" items-center flex flex-col lg:flex-row justify-between max-w-6xl mx-auto gap-6">
             <div className="">
                 <h1 className=" text-4xl lg:text-6xl font-serif font-semibold">Millions of jobs <br /> for you <br />
                     <span className=" text-[#3748ff] font-semibold">
@@ -33,8 +33,10 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="">
                 <img src="https://i.ibb.co/y8SF2nQ/portrait-businesswoman-pointing-finger-left-showing-corporate-banner-logo-standing-brown-suit-remove.pngs" alt="" className="h-96" />
+                <input type="text" className="file-input file-input-bordered file-input-accent w-full max-w-sm absolute top-96 lg:max-w-xl" />
+                
             </div>
             </div>
 

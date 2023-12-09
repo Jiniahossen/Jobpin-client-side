@@ -24,7 +24,7 @@ const PdfGenerator = ({ job }) => {
         <Document>
             <Page size="A4" style={styles.page}>
                 <View style={styles.section}>
-                    <Text style={styles.title}>Job Application Summary</Text>
+                    <Text style={styles.title}>Job Application Summary!</Text>
                     <View style={styles.text}>
                         <div className=' text-lg font-serif text-black'>
                             <Text>Job Title: {job.jobtitle}</Text>

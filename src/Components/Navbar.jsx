@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/Authprovider";
 import Swal from "sweetalert2";
 import '../index.css'
+import {FaUserAlt} from 'react-icons/fa'
 
 
 
@@ -150,8 +151,8 @@ const Navbar = ({ children }) => {
                                             </div>
                                             :
                                             <div className="navbar-end flex gap-2">
-                                                <div className="w-10 rounded-full">
-                                                    <img src='' />
+                                                <div className="w-10 rounded-full text-2xl mt-1">
+                                                    <FaUserAlt></FaUserAlt>
                                                 </div>
                                                 <Link to='/login'><button className="bg-[#3748ff] text-white px-4 py-1 font-serif">Login</button></Link>
                                             </div>

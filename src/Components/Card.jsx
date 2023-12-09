@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../provider/Authprovider";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ data }) => {
     const [deadlinePassed, setDeadlinePassed] = useState(false);
-    
+    const navigate=useNavigate();
 
     const { user } = useContext(AuthContext);
     const userEmail = user.email;
@@ -88,14 +89,17 @@ const Card = ({ data }) => {
                 <h1 className="text-base font-serif font-semibold mb-4">Number of Applicants:{applicantsNumber}</h1>
                 <div>
                     {deadlinePassed ? (
-                        <span>
-                            {Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: "Deadline is over",
-                                footer: '<a href="">Why do I have this issue?</a>'
-                            })}
-                        </span>
+                          <span>
+                          {Swal.fire({
+                              icon: 'error',
+                              title: 'Oops...',
+                              text: "Deadline is over",
+                              footer: '<a href="">Why do I have this issue?</a>'
+                          })}
+                          {
+                              navigate(`/job/${_id}`)
+                          }
+                      </span>
                     ) : (
                         <div>
                             <button className="text-lg text-white font-serif bg-[#3748ff] px-4 py-1" onClick={handleApplicationButton}>Apply</button>
